@@ -8,5 +8,5 @@
 	
   print ("God dag $fornavn $etternavn <br />");  
 
-9=4+5;
+// 9=4+5;
 ?>
