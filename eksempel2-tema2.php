@@ -6,7 +6,7 @@
 <body>
   <h3>Eksempel 2</h3>
     
-  <form method="post" action="" id="eksempel2" name="eksempel2">
+  <form method="post" action="" id="eksempel2-tema2" name="eksempel2">
     Hva er 3 ganger 3 ? <input type="text" id="svar" name="svar" required  /> <br />
     <input type="submit" value="Fortsett" id="fortsett" name="fortsett" />
     <input type="reset" value="Nullstill" name="nullstill" id="nullstill" /> <br />
