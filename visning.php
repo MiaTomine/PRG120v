@@ -6,7 +6,7 @@
 <body>
   <h2>Vis alle klasser</h2>
   <?php
-  include("db-tilkobling.php");
+  
   $sql = "SELECT * FROM klasse";
   $resultat = mysqli_query($db, $sql);
 
