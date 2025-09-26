@@ -1,5 +1,5 @@
 <?php
-include("db-tilkobling.php");
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $brukernavn = $_POST['brukernavn'];
