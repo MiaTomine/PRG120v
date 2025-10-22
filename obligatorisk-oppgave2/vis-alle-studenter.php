@@ -1,13 +1,25 @@
-<?php include("obligatorisk-oppgave2/db.php"); ?>
-<h2>Alle studenter</h2>
-<table border="1">
-<tr><th>Brukernavn</th><th>Fornavn</th><th>Etternavn</th><th>Klasse</th></tr>
-<?php
-$sql = "SELECT s.brukernavn, s.fornavn, s.etternavn, k.klassenavn 
-        FROM student s JOIN klasse k ON s.klassekode = k.klassekode";
-$result = $conn->query($sql);
-while ($row = $result->fetch_assoc()) {
-    echo "<tr><td>".$row['brukernavn']."</td><td>".$row['fornavn']."</td><td>".$row['etternavn']."</td><td>".$row['klassenavn']."</td></tr>";
-}
+<?php /* vis-alle-emner */
+/*
+/* Programmet skriver ut alle registrerte emner
+*/
+
+ include("db-tilkobling.php"); /* tilkobling til database-serveren utført og valg av database foretatt */
+ $sqlSetning="SELECT * FROM emne ORDER BY emnekode;";
+ $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen"); /*
+SQL-setning sendt til database-serveren */
+ $antallRader=mysqli_num_rows($sqlResultat); /* antall rader i resultatet beregnet */
+ print ("<h3>Registrerte emnee </h3>");
+ print ("<table border=1>");
+ print ("<tr><th align=left>emnekode</th> <th align=left>emnenavn</th> <th align=left>studiumkode</th>
+</tr>");
+ for ($r=1;$r<=$antallRader;$r++)
+ {
+ $rad=mysqli_fetch_array($sqlResultat); /* ny rad hentet fra spørringsresultatet */
+ $emnekode=$rad["emnekode"];
+ $emnenavn=$rad["emnenavn"];
+ $studiumkode=$rad["studiumkode"];
+ print ("<tr> <td> $emnekode </td> <td> $emnenavn </td> <td> $studiumkode </td> </tr>");
+ }
+ print ("</table>");
+
 ?>
-</table>
