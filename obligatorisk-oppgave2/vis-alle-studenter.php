@@ -1,4 +1,4 @@
-<?php include("../db.php"); ?>
+<?php include("obligatorisk-oppgave2/db.php"); ?>
 <h2>Alle studenter</h2>
 <table border="1">
 <tr><th>Brukernavn</th><th>Fornavn</th><th>Etternavn</th><th>Klasse</th></tr>
