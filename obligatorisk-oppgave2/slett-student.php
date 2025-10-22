@@ -7,34 +7,30 @@
 
 ?>
 <script src="funksjoner.js"> </script>
-<h3>Slett emne</h3>
-<form method="post" action="" id="slettEmneSkjema" name="slettEmneSkjema" onSubmit="return
+<h3>Slett student</h3>
+<form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return
 bekreft()">
- Emne <select name="emnekode" id="emnekode">
- <?php print("<option value=''>velg emne </option>");
- include("dynamiske-funksjoner.php"); listeboksEmnekode(); ?>
+ Emne <select name="brukernavn" id="brukernavn">
+ <?php print("<option value=''>velg brukernavn </option>");
+ include("dynamiske-funksjoner.php"); listeboksBrukernavn(); ?>
  </select> <br/>
-<input type="submit" value="Slett emne" name="slettEmneKnapp" id="slettEmneKnapp" />
+<input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" />
 </form>
 
 <?php
- if (isset($_POST ["slettEmneKnapp"]))
- {
- include("db-tilkobling.php"); /* tilkobling til database-serveren utført og valg av database foretatt */
- $emnekode=$_POST ["emnekode"];
+ if (isset($_POST ["slettStudentKnapp"])){
+    include("db-tilkobling.php"); 
+    $brukernavn=$_POST ["brukernavn"];
 
- if (!$emnekode)
- {
- print ("Det er ikke valgt noe emne");
- }
- else
- {
- include("db-tilkobling.php"); /* tilkobling til database-serveren utført og valg av database foretatt */
- $sqlSetning="DELETE FROM emne WHERE emnekode='$emnekode';";
- mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
- /* SQL-setning sendt til database-serveren */
- print ("F&oslash;lgende emne er n&aring; slettet: $emnekode <br />");
- }
+    if (!$brukernavn){
+    print ("Det er ikke valgt noe brukernavn");
+    } else {
+    include("db-tilkobling.php"); 
+    $sqlSetning="DELETE FROM student WHERE brukernavn='$brukernavn';";
+    mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
+ 
+    print ("F&oslash;lgende emne er n&aring; slettet: $brukernavn <br />");
+    }
 
  }
 
