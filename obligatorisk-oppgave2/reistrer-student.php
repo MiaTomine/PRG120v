@@ -1,9 +1,5 @@
 
-<?php /* registrer-emne */
-/*
-/* Programmet lager et html-skjema for å registrere et emne
-/* Programmet registrerer data i databasen
-*/
+<?php 
 
 ?>
 <h3>Registrer student </h3>
