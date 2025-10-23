@@ -6,7 +6,7 @@
 */
 
 
-/*function listeboksklassekode()
+function listeboksklassekode()
 {
   include("db-tilkobling.php");  
       
@@ -24,26 +24,8 @@
 
       print("<option value='$klassekode'>$klassekode $klassenavn</option>");  
     }
-} */
+} 
 
-
-function listeboksKlassekode() {
-    include("db-tilkobling.php");
-
-    $sqlSetning = "SELECT * FROM klasse ORDER BY klassekode;";
-    $sqlResultat = mysqli_query($db, $sqlSetning) or die("Feil: klarte ikke å hente data fra databasen.");
-
-    // sjekk om vi faktisk fikk data
-    if (mysqli_num_rows($sqlResultat) == 0) {
-        print("<option value=''>Ingen klasser registrert</option>");
-    } else {
-        while ($rad = mysqli_fetch_array($sqlResultat)) {
-            $klassekode = $rad["klassekode"];
-            $klassenavn = $rad["klassenavn"];
-            print("<option value='$klassekode'>$klassekode – $klassenavn</option>");
-        }
-    }
-}
 
 
 
