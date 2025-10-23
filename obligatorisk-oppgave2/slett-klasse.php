@@ -2,7 +2,7 @@
 
 <script src="funksjoner.js"> </script>
 <h3>Slett klasse</h3>
-<form method="post" action="" id="slettKlasseSkjema" name="slettKlasseSkjema" onSubmit="return bekreft()">
+<form method="post" action="" id="slettKlasseSkjema" name="slettKlasseSkjema" onsubmit="return bekreft()">
  Klasse: 
  <select name="klassekode" id="klassekode">
  <?php print("<option value=''>velg klasse </option>");
@@ -34,7 +34,7 @@
 $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
 mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; slette data fra databaseb");
 
-if (mysgli_affected_rows($db) == 0) {
+if (mysqli_affected_rows($db) == 0) {
     print ("klassen $klassekode er slettet");
 } else {
     print ("Ingen klassen $klassekode ble funnet");

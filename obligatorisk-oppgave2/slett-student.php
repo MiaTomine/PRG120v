@@ -8,7 +8,7 @@
 ?>
 <script src="funksjoner.js"> </script>
 <h3>Slett student</h3>
-<form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return
+<form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onsubmit="return
 bekreft()">
  Emne <select name="brukernavn" id="brukernavn">
  <?php print("<option value=''>velg brukernavn </option>");
