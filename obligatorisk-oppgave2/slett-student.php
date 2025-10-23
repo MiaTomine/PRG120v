@@ -12,7 +12,7 @@
 bekreft()">
  Emne <select name="brukernavn" id="brukernavn">
  <?php print("<option value=''>velg brukernavn </option>");
- include("dynamiske_funksjoner.php"); listeboksbrukernavn(); ?>
+ include("dynamiske-funksjoner.php"); listeboksbrukernavn(); ?>
  </select> <br/>
 <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" />
 </form>
