@@ -12,7 +12,7 @@ if ($antallrader == 0) {
 } else {
    print("<table border=1>");
    print("<tr><th align=left>Klassekode</th> <th align=left>Klassenavn</th> <th align=left>Studiumkode</th></tr>");
-   while ($rad=mysqli_fetch_array($sqlResultat)); {
+   while ($rad=mysqli_fetch_array($sqlResultat)) {
       $klassekode=$rad["klassekode"];
       $klassenavn=$rad["klassenavn"];
       $studiumkode=$rad["studiumkode"];
