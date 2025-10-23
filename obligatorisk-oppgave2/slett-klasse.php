@@ -1,8 +1,4 @@
- /* slett-klasse */
-/*
-/* Programmet lager et skjema for å kunne slette et studium
-/* Programmet sletter det valgte studiet
-*/
+
 
 <script src="funksjoner.js"> </script>
 <h3>Slett klasse</h3>
@@ -11,7 +7,7 @@
  <select name="klassekode" id="klassekode">
  <?php print("<option value=''>velg klasse </option>");
 
- include("dynamiske-funksjoner.php"); listeboksKlassekode(); ?>
+ include("dynamiske_funksjoner.php"); listeboksKlassekode(); ?>
  </select> <br/>
 
  <input type="submit" value="Slett klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" />
