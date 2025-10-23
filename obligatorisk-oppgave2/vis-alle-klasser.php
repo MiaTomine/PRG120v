@@ -7,7 +7,7 @@ $sqlSetning="SELECT klassekode, klassenavn, studiumkode FROM klasse ORDER BY kla
 $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
 $antallRader=mysqli_num_rows($sqlResultat);
 
-if ($antallrader == 0) {
+if ($antallRader == 0) {
       print ("ingen klasser registrert");
 } else {
    print("<table border=1>");
